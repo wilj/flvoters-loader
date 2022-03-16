@@ -7,6 +7,6 @@ Assuming the extract disk is mounted at ```/mnt/flvoters```, the commands to loa
 
 ```
 dolt clone wilj/flvoters
-./load_voter_detail_disk.sh /mnt/flvoters
+./load_voter_extract.sh /mnt/flvoters
 ```
 
