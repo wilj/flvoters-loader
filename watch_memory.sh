@@ -4,8 +4,11 @@ set -euo pipefail
 watchMemory() {
   echo "log_ts,pct_mem,vsz,rss"
   while true; do
-      echo "$(date '+%Y-%m-%d %H:%M:%S'),$(ps -C dolt  -o%mem=,vsz=,rss= | sed 's/^\s//g' | sed 's/\s/,/g')" 
-      sleep 1
+    for p in $(ps -C dolt  -o%mem=,vsz=,rss= | sed 's/^\s//g' | sed 's/\s/,/g')
+    do
+        echo "$(date +%s),$p"
+    done
+    sleep 1
   done
 }
 
